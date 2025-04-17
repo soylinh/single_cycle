@@ -1,0 +1,63 @@
+`timescale 1ns/1ps
+
+module fetch_tb;
+
+    // Inputs
+    reg clk;
+    reg rst;
+
+    // Wires
+    wire [31:0] pc_out;
+    wire [31:0] pc_next;
+    wire [31:0] instruction;
+
+    // Instantiate Program Counter
+    program_counter uut_pc (
+        .clk(clk),
+        .rst(rst),
+        .pc_in(pc_next),
+        .pc_out(pc_out)
+    );
+
+    // Instantiate PC Adder
+    pc_adder uut_pc_adder (
+        .pc_in(pc_out),
+        .pc_next(pc_next)
+    );
+
+    // Instantiate Instruction Memory
+    Instruction_Memory uut_inst_mem (
+        .clk(clk),
+        .rst(rst),
+        .read_address(pc_out),
+        .instruction_out(instruction)
+    );
+
+    // Clock generation: 10ns period
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk;
+    end
+
+    // Test sequence
+    initial begin
+        // Apply reset
+        rst = 1;
+        #15;
+        rst = 0;
+
+        // Let simulation run
+        #200;
+        $finish;
+    end
+
+    // Monitor outputs
+    initial begin
+        $dumpfile("fetch_tb.vcd");
+        $dumpvars(0, fetch_tb);
+        $display("Time(ns) | PC_out    | PC+4      | Instr");
+        $monitor("%0dns | %h | %h | %h", $time, pc_out, pc_next, instruction);
+    end
+
+endmodule
+

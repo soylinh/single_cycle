@@ -1,0 +1,107 @@
+module Decode_tb;
+    // Định nghĩa các tín hiệu test
+    reg clk, rst;
+    reg [31:0] instruction;        // Input từ Instruction Memory
+    reg [31:0] write_data;        // Input từ Write Back stage
+    reg RegWrite;                 // Input từ Control (WB)
+
+    // Các tín hiệu output cần theo dõi
+    wire [31:0] read_data1;       // Output từ Register File
+    wire [31:0] read_data2;       // Output từ Register File
+    wire [31:0] imm_gen_out;      // Output từ Immediate Generator
+    
+    // Control signals
+    wire ALUSrc;                  // Output từ Control Unit
+    wire MemtoReg;               // Output từ Control Unit
+    wire RegWrite_out;           // Output từ Control Unit
+    wire MemRead;                // Output từ Control Unit
+    wire MemWrite;               // Output từ Control Unit
+    wire Branch;                 // Output từ Control Unit
+    wire [1:0] ALUOp;           // Output từ Control Unit
+
+    // Khởi tạo các module cần test
+    Register_File reg_file(
+        .rst(rst),
+        .clk(clk),
+        .RegWrite(RegWrite),
+        .Rs1(instruction[19:15]),
+        .Rs2(instruction[24:20]),
+        .Rd(instruction[11:7]),
+        .Write_data(write_data),
+        .read_data1(read_data1),
+        .read_data2(read_data2)
+    );
+
+    main_control_unit control_unit(
+        .opcode(instruction[6:0]),
+        .ALUSrc(ALUSrc),
+        .MemtoReg(MemtoReg),
+        .RegWrite(RegWrite_out),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .Branch(Branch),
+        .ALUOp(ALUOp)
+    );
+
+    immediate_generator imm_gen(
+        .instruction(instruction),
+        .imm_out(imm_gen_out)
+    );
+
+    // Tạo clock
+    initial begin
+        clk = 0;
+        forever #10 clk = ~clk;
+    end
+
+    // Test cases
+    initial begin
+        // Khởi tạo file wave
+        $dumpfile("decode_wave.vcd");
+        $dumpvars(0, Decode_tb);
+
+        // Khởi tạo giá trị
+        rst = 1;
+        RegWrite = 0;
+        instruction = 32'h0;
+        write_data = 32'h0;
+        #20;
+
+        // Test case 1: R-type (add x3, x1, x2)
+        rst = 0;
+        instruction = 32'h002080B3;  // add x1, x1, x2
+        RegWrite = 1;
+        write_data = 32'hA;  // Giả sử ghi giá trị 10 vào register
+        #20;
+
+        // Test case 2: I-type (addi x2, x1, 5)
+        instruction = 32'h00508093;  // addi x1, x1, 5
+        #20;
+
+        // Test case 3: S-type (sw x2, 8(x1))
+        instruction = 32'h00209423;  // sw x2, 8(x1)
+        #20;
+
+        // Test case 4: B-type (beq x1, x2, offset)
+        instruction = 32'h00208063;  // beq x1, x2, offset
+        #20;
+
+        // Test case 5: lw x3, 4(x1)
+        instruction = 32'h00409183;  // lw x3, 4(x1)
+        #20;
+
+        // Kết thúc simulation
+        #20;
+        $finish;
+    end
+
+    // Monitor các tín hiệu quan trọng
+    initial begin
+        $monitor("Time=%0t\nInstruction=%h\nControl Signals: ALUSrc=%b MemtoReg=%b RegWrite=%b MemRead=%b MemWrite=%b Branch=%b ALUOp=%b\nRegister File: read_data1=%h read_data2=%h\nImmediate=%h\n",
+                 $time, instruction,
+                 ALUSrc, MemtoReg, RegWrite_out, MemRead, MemWrite, Branch, ALUOp,
+                 read_data1, read_data2,
+                 imm_gen_out);
+    end
+
+endmodule

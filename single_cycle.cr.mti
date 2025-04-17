@@ -1,0 +1,154 @@
+C:/Users/ehplain/BKA/KTMTNC/code_single/ProgramCounter.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/ProgramCounter.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module program_counter
+
+Top level modules:
+	program_counter
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/Execute_tb.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/Execute_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Execute_tb
+
+Top level modules:
+	Execute_tb
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/Decode_tb.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/Decode_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Decode_tb
+
+Top level modules:
+	Decode_tb
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/Single_Cycle.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/Single_Cycle.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module program_counter
+-- Compiling module pc_adder
+-- Compiling module pc_mux
+-- Compiling module Instruction_Memory
+-- Compiling module Register_File
+-- Compiling module main_control_unit
+-- Compiling module immediate_generator
+-- Compiling module ALU
+-- Compiling module ALU_Control
+-- Compiling module MUX2to1
+-- Compiling module Data_Memory
+-- Compiling module MUX2to1_DataMemory
+-- Compiling module Branch_Adder
+-- Compiling module RISCV_Top
+
+Top level modules:
+	RISCV_Top
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/WriteBack_tb.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/WriteBack_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module WriteBack_tb
+
+Top level modules:
+	WriteBack_tb
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/ControlUnit.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/ControlUnit.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module main_control_unit
+
+Top level modules:
+	main_control_unit
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/ALU.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/ALU.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/PCAdder.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/PCAdder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pc_adder
+
+Top level modules:
+	pc_adder
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/DataMemMux.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/DataMemMux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MUX2to1_DataMemory
+
+Top level modules:
+	MUX2to1_DataMemory
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/RegisterFile.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/RegisterFile.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Register_File
+
+Top level modules:
+	Register_File
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/Memory_tb.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/Memory_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Memory_tb
+
+Top level modules:
+	Memory_tb
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/BranchAdder.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/BranchAdder.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Branch_Adder
+
+Top level modules:
+	Branch_Adder
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/RISCV-Top.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/RISCV-Top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RISCV_Top
+
+Top level modules:
+	RISCV_Top
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/InstructionMemory.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/InstructionMemory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Instruction_Memory
+
+Top level modules:
+	Instruction_Memory
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/ALUControl.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/ALUControl.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU_Control
+
+Top level modules:
+	ALU_Control
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/DataMemory.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/DataMemory.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module Data_Memory
+
+Top level modules:
+	Data_Memory
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/ALUMux.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/ALUMux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module MUX2to1
+
+Top level modules:
+	MUX2to1
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/PCMux.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/PCMux.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module pc_mux
+
+Top level modules:
+	pc_mux
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/ImmediateGenerator.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/ImmediateGenerator.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module immediate_generator
+
+Top level modules:
+	immediate_generator
+
+} {} {}} C:/Users/ehplain/BKA/KTMTNC/code_single/tb.v {1 {vlog -work work -stats=none C:/Users/ehplain/BKA/KTMTNC/code_single/tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module RISCV_ToP_Tb
+
+Top level modules:
+	RISCV_ToP_Tb
+
+} {} {}}
